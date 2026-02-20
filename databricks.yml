@@ -26,4 +26,3 @@ resources:
 targets:
   dev:
     workspace:
-      host: ${DATABRICKS_HOST}
