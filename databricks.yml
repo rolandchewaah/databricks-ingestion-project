@@ -1,0 +1,29 @@
+# databricks.yml
+bundle:
+  name: ingestion-pipeline
+
+artifacts:
+  default:
+    type: whl
+    path: .
+
+resources:
+  jobs:
+    ingestion_job:
+      name: "Daily Data Ingestion"
+      tasks:
+        - task_key: run_ingest_script
+          job_cluster_key: default_cluster
+          notebook_task:
+            notebook_path: ./src/ingest_data.py
+      job_clusters:
+        - job_cluster_key: default_cluster
+          new_cluster:
+            spark_version: 14.3.x-scala2.12
+            node_type_id: Standard_DS3_v2
+            num_workers: 1
+
+targets:
+  dev:
+    workspace:
+      host: ${DATABRICKS_HOST}
