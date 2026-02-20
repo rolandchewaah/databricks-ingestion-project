@@ -8,9 +8,10 @@ resources:
       tasks:
         - task_key: run_ingest_script
           job_cluster_key: default_cluster
-          python_task:
-            python_file: ./src/ingest_data.py
-
+          # --- CHANGE START ---
+          spark_python_task:
+            python_file: ./src/ingest_data.py 
+          # --- CHANGE END ---
       job_clusters:
         - job_cluster_key: default_cluster
           new_cluster:
