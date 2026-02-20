@@ -1,9 +1,4 @@
 # Databricks notebook source
-import os
-from pyspark.sql import SparkSession
-
-# Optional: Use this to create separate cells in the UI
-# COMMAND ----------
 
 print("Starting ingestion...")
 input_path = "abfss://raw-data@mystorage.dfs.core.windows.net/uploads/"
