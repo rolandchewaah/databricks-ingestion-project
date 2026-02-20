@@ -1,4 +1,3 @@
-# src/ingest_data.py
 # Databricks notebook source
 input_path = "abfss://raw-data@mystorage.dfs.core.windows.net/uploads/"
 checkpoint_path = "abfss://checkpoints@mystorage.dfs.core.windows.net/ingestion_job/"
